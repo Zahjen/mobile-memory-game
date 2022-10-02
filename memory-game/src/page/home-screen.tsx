@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
 import { View, SafeAreaView, Text, Pressable } from "react-native";
 import { InputDropdownComponent } from "../element/Input/input-dropdown/input-dropdown-component";
 import Spacer from "../element/spacer";
 import Title from "../element/title";
+import { RouteParams } from "../navigation/route-navigator";
 import { InputDataService } from "../services/input-data";
 import { InputGenerator } from "../services/input-generator";
 import { buttonStyle } from "../style/button";
@@ -11,7 +14,6 @@ import { pageView } from "../style/view";
 import { color } from "../variable/color";
 import { spacer } from "../variable/spacer";
 
-
 /**
  * Composant relatif à la page d'acceuil
  * 
@@ -19,6 +21,7 @@ import { spacer } from "../variable/spacer";
  */
 const HomeScreen = (): JSX.Element => {
 
+    const navigation = useNavigation<NativeStackNavigationProp<RouteParams>>();
     const cardNumber: InputDropdownComponent = InputDataService.getInstance().getCardNumberDropdownData();
 
     return (
@@ -34,7 +37,9 @@ const HomeScreen = (): JSX.Element => {
                     onPress = {() => {
                         try {
                             cardNumber.validator();
-                            console.log(cardNumber.getValue.getId)
+                            navigation.navigate("GridScreen", {
+                                cardNumber: cardNumber.getValue.getId
+                            })
                         } catch (e: any) {
                             console.log(e.message);
                         }
