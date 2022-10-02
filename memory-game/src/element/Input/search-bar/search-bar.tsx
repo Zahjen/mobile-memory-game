@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInput, View } from "react-native";
-import { color } from "../../example/variables/color";
+import { color } from "../../../variable/color";
 import { PropsSearchBarComponent } from "./search-bar-props";
 
 /**
@@ -43,6 +43,7 @@ const SearchBarComponent: React.FC<PropsSearchBarComponent> = (props: PropsSearc
                 value = { props.value }
                 onChangeText = { props.handleSearch }
                 placeholder = { props.placeholder }
+                placeholderTextColor = { color.secondary }
                 style = { props.styleText }
             />
         </View>

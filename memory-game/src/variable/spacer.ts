@@ -3,7 +3,7 @@
  * 
  * ```
  * > spacerTitle: {
- *      bottom: 30
+ *      bottom: 60
  *   }
  * ```
  */
@@ -12,12 +12,12 @@
     /**
      * ```
      * spacerTitle: {
-     *  bottm: 30
+     *  bottm: 60
      * }
      * ```
     */
     spacerTitle: {
-        bottom: 30
+        bottom: 60
     }
     
 }

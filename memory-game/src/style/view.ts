@@ -9,7 +9,7 @@ import { padding } from "../variable/padding";
 export const pageView = (): StyleProp<ViewStyle> => {
     return {
         flex: 1,
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "flex-start",
         paddingVertical: padding.view.vertical,
         paddingHorizontal: padding.view.horizontal,

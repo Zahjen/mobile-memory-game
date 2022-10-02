@@ -1,19 +1,18 @@
+import { StyleProp, TextStyle, ViewStyle } from "react-native"
+
 /**
  * Interface composée de :
  * * `title` *(string)* : Titre à associer.
- * * `color?` *(string)* : Couleur appliqué au titre.
- * * `horizontalSpace?` *(number)* : Hauteur appliquée entre le titre et ce qui suit.
- * * `fontSize?` *(number)* : Taille de police du titre.
+ * * `containerStyle?` *(StyleProp<ViewStyle>)* : Style associé au container du titre.
+ * * `titleStyle?` *(StyleProp<TextStyle>)* : Style associé au titre lui - même.
  */
 export interface TitleProps {
     /** Titre à associer. */
     title: string,
-    /** Couleur appliqué au titre. */
-    color?: string,
-    /** Hauteur appliquée entre le titre et ce qui suit. */
-    horizontalSpace?: number,
-    /** Taille de police du titre. */
-    fontSize?: number
+    /** Style associé au container du titre. */
+    containerStyle?: StyleProp<ViewStyle>,
+    /** Style associé au titre lui - même. */
+    titleStyle?: StyleProp<TextStyle>,
 }
 
 /**

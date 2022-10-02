@@ -3,7 +3,7 @@
  * 
  * ```
  *  view: {
- *      horizontal: 20,
+ *      horizontal: 30,
  *      vertical: 30
  *  },
  * ```
@@ -13,13 +13,13 @@
     /**
      * ```
      * view: {
-     *      horizontal: 20,
+     *      horizontal: 30,
      *      vertical: 30
      *  }
      * ```
      */
     view: {
-        horizontal: 20,
+        horizontal: 30,
         vertical: 30
     },
 

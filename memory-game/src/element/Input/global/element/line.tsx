@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { color } from "../../../example/variables/color";
+import { color } from "../../../../variable/color";
 import { IMargin } from "../interface/object/margin";
 
 /**

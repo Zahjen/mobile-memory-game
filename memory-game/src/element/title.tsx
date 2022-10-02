@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text } from "react-native";
 import { TitleProps } from "../interface/props";
 import { title, widthHeight } from "../style/global";
+import { color } from "../variable/color";
+import { fontSize } from "../variable/font-size";
 import { spacer } from "../variable/spacer";
 import Spacer from "./spacer";
 
@@ -12,9 +14,8 @@ import Spacer from "./spacer";
  * 
  * `TitleProps` : Interface composée de :
  * * `title` *(string)* : Titre à associer.
- * * `color?` *(string)* : Couleur appliqué au titre.
- * * `horizontalSpace?` *(number)* : Hauteur appliquée entre le titre et ce qui suit.
- * * `fontSize?` *(number)* : Taille de police du titre.
+ * * `containerStyle?` *(StyleProp<ViewStyle>)* : Style associé au container du titre.
+ * * `titleStyle?` *(StyleProp<TextStyle>)* : Style associé au titre lui - même.
  * 
  * ---
  * 
@@ -24,11 +25,10 @@ import Spacer from "./spacer";
 const Title: React.FC<TitleProps> = (props: TitleProps): JSX.Element => {
 
     return (
-        <View style = { widthHeight("100%") }>
-            <Text style = { title(props.color, props.fontSize) }>
+        <View style = { props.containerStyle }>
+            <Text style = { props.titleStyle }>
                 { props.title }
             </Text>
-            <Spacer height = { props.horizontalSpace }/>
         </View>
     );
 
@@ -38,7 +38,14 @@ const Title: React.FC<TitleProps> = (props: TitleProps): JSX.Element => {
 
 /** Les paramètres par défaut que prendra le composant */
 Title.defaultProps = {
-    horizontalSpace: spacer.spacerTitle.bottom,
+    containerStyle: {
+        width: "100%"
+    },
+    titleStyle: {
+        color: color.text,
+        fontSize: fontSize.title,
+        fontWeight: "bold"
+    }
 }
 
 export default Title;

@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList, Pressable, StyleProp, Text, TextInput, View, ViewStyle } from "react-native";
-import { color } from "../../example/variables/color";
+import { color } from "../../../variable/color";
 import ModalElement from "../global/element/modal-element";
 import Spacer from "../global/element/spacer";
 import { frenchCountries, IFrenchCountryList } from "../global/variables/french-countries";
