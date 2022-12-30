@@ -1,8 +1,12 @@
 import { RouteProp, useRoute } from "@react-navigation/native";
 import React from "react";
-import { View, SafeAreaView, Text, Pressable } from "react-native";
+import { View, SafeAreaView } from "react-native";
+import { GridScreenController } from "../controller/grid-screen-controller";
+import SquareCell from "../element/square-cell";
+import { Cell } from "../modele/cell";
+import { Grid } from "../modele/grid";
 import { RouteParams } from "../navigation/route-navigator";
-import { pageView } from "../style/view";
+import { gridScreenStyle } from "../style/grid-screen";
 import { color } from "../variable/color";
 
 /**
@@ -16,10 +20,19 @@ const GridScreen = (): JSX.Element => {
 
     return (
         <SafeAreaView style = {{ backgroundColor: color.backgroundColor, flex: 1 }}>
-            <View style = { pageView() }>
-                <Text>
-                    { routeParams.params?.cardNumber }
-                </Text>
+            <View style = { gridScreenStyle.container }>
+                {
+                    GridScreenController
+                        .getInstance()
+                        .generateGrid(
+                            routeParams.params?.cardNumber!
+                        ).getCells.map((cell: Cell) => {
+                            return <SquareCell
+                                key = { cell.getId }
+                                cell = { cell }
+                            />
+                        })
+                }
             </View>
         </SafeAreaView>
     );
