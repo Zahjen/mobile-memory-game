@@ -1,4 +1,4 @@
-import { StyleProp, TextStyle } from "react-native";
+import { StyleProp, StyleSheet, TextStyle } from "react-native";
 import { color } from "../variable/color";
 
 /**
@@ -12,34 +12,39 @@ import { color } from "../variable/color";
     },
 
     text: {
-        color: color.text
+        color: color.text,        
     }
 }
 
 /**
  * Style relatif au composant permettant l'affichage d'un dropdown.
  */
- export const dropdownComponent = {
+ export const dropdownComponent = StyleSheet.create({
     labelStyle: { 
         color: color.text, 
         textAlign: "center",
         fontSize: 16,
         marginBottom: 15,
-    } as StyleProp<TextStyle>,
+        fontFamily: "PoppinsLight"
+    },
     itemTextStyle: {
         color: color.text
     },
-    listHeaderComponentStyleBackgroundColor: color.backgroundColor,
+    listHeaderComponentStyleBackgroundColor: {
+        backgroundColor: color.backgroundColor
+    },
     inputDropdownCurrentSelectionTextStyle: {
         textAlign: "center",
+        fontFamily: "PoppinsLight",
         color: color.text,
-    } as StyleProp<TextStyle>,
+    },
     errorStyle: {
         color: color.error, 
         textAlign: "center",
+        fontFamily: "PoppinsLight",
         fontSize: 16,
         marginTop: 15
-    } as StyleProp<TextStyle>,
+    },
     modalContainer: {
         width: "100%"
     },
@@ -54,10 +59,12 @@ import { color } from "../variable/color";
     },
     closeModalTextStyle: {
         color: color.tertiary,
-        marginRight: 20
+        marginRight: 20,
+        fontFamily: "PoppinsLight"
     },
     titleModalTextStyle: {
         color: color.text,
+        fontFamily: "PoppinsLight"
     },
     searchBarStyleContainer: {
         borderColor: color.text,
@@ -68,7 +75,8 @@ import { color } from "../variable/color";
         marginVertical: 15
     },
     searchBarStyleText: {
-        color: color.text
+        color: color.text,
+        fontFamily: "PoppinsLight"
     },
     styleOpenModal: {
         borderColor: color.secondary,
@@ -80,6 +88,7 @@ import { color } from "../variable/color";
     openModalTextStyle: {
         color: color.text,
         fontSize: 16,
-        textAlign: "center"
-    } as StyleProp<TextStyle>,
-}
+        textAlign: "center",
+        fontFamily: "PoppinsLight"
+    },
+})

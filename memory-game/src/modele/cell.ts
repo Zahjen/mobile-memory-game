@@ -12,6 +12,8 @@ export class Cell {
     private _id!: number;
     /** Chaine de caractères permettant de déterminer la source de l'image affichée sur la carte */
     private _icon!: string;
+    /** Attribut permettant de stipuler si oui ou non il est possible de cliquer sur la carte */
+    private _isClickable!: boolean
     
     // --------------------------
     // Constructeur
@@ -21,7 +23,8 @@ export class Cell {
         options: ICellOption
     ) {
         this.id = options.id;
-        this.icon = options.icon!;
+        this.icon = options.icon;
+        this.isClickable = options.isClickable;
     }
 
     // --------------------------
@@ -35,6 +38,10 @@ export class Cell {
     /** Méthode permettant de récupérer la chaine de caractères permettant de déterminer la source de l'image affichée sur la carte. */
     public get getIcon() : string
     { return this._icon; }
+
+    /** Méthode permettant de récupérer le fait permettant de savoir si oui ou non il est possible de cliquer sur la carte */
+    public get getIsClickable() : boolean
+    { return this._isClickable; }
 
     // --------------------------
     // Setter
@@ -52,6 +59,13 @@ export class Cell {
         this._icon = (icon === null || icon === undefined) 
             ? ""
             : icon.trim();
+    }
+
+    /** Méthode permettant de poser le fait permettant de savoir si oui ou non il est possible de cliquer sur la carte */
+    public set isClickable(isClickable: boolean) {
+        this._isClickable = (isClickable === null || isClickable === undefined) 
+            ? true
+            : isClickable;
     }
 
     // --------------------------

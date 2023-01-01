@@ -1,4 +1,7 @@
+import { disableErrorHandling } from "expo";
 import { Animated, Easing } from "react-native";
+import { SquareCellProps } from "../component/square-cell";
+import { Cell } from "../modele/cell";
 
 export class CellController {
 
@@ -36,7 +39,7 @@ export class CellController {
      * @param animation L'animation a réaliser.
      * @param toValue La valeur jusque laquelle l'animation se déroulera (range)
      */
-    private animationBase(
+    public animationBase(
         animation: Animated.Value, 
         toValue: number
     ) : void {
@@ -53,7 +56,7 @@ export class CellController {
      * 
      * @param animation L'animation a réaliser.
      */
-    private showIcon(animation: Animated.Value) : void {
+    public showIcon(animation: Animated.Value) : void {
         this.animationBase(animation, 1);
     }
 
@@ -62,28 +65,7 @@ export class CellController {
      * 
      * @param animation L'animation a réaliser.
      */
-    private hideIcon(animation: Animated.Value) : void {
+    public hideIcon(animation: Animated.Value) : void {
         this.animationBase(animation, 0);
     }  
-
-    /**
-     * Méthode permettant de gérer l'animation lorsque la carte est cliquée. Le paramètre `flipRotation` permettant de déterminer si l'icon présent sur la carte est visible :
-     * * `0`: La carte ne montre pas l'icon de la carte
-     * * `1`: La carte montre l'icon de la carte
-     * 
-     * @param flipRotation Nombre permettant de se réperer et savoir si l'icon de la carte sélectionnée est visible.
-     * @param animation L'animation a réaliser
-     * @returns Le nombre correspondant à l'affichae ou non de l'icon présent sur la carte.
-     */
-    public onCellClicked(flipRotation: number, animation: Animated.Value) : number {
-        flipRotation = (flipRotation === 0) ? 1 : 0;
-
-        !!flipRotation 
-            ? this.showIcon(animation)
-            : this.hideIcon(animation);
-
-        return flipRotation;
-    }
-
-
 }

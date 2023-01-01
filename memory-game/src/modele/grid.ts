@@ -106,15 +106,17 @@ export class Grid {
      * Méthode permettant de mélanger les différents icônes.
      */
     public shuffleCard() : string[] {
+        let cardDataCopy = [...cardData];
+
         for (let i = this._size - 1; i > 0; i--) {
             let randomIndex: number = Math.floor(Math.random() * (i + 1));
-            let currentValue = cardData[i]; 
+            let currentValue = cardDataCopy[i]; 
 
-            cardData[i] = cardData[randomIndex];
-            cardData[randomIndex] = currentValue;
+            cardDataCopy[i] = cardDataCopy[randomIndex];
+            cardDataCopy[randomIndex] = currentValue;
         }
 
-        return cardData.slice(0, this._size);
+        return cardDataCopy.slice(0, this._size);
     }
 
     /**
@@ -126,7 +128,8 @@ export class Grid {
         for (let i = 0 ; i < array.length ; i++) {
             let cell = new Cell({
                 id: i,
-                icon: array[i]
+                icon: array[i],
+                isClickable: true
             });
 
             this.addCell(cell);

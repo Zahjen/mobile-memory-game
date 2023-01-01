@@ -15,7 +15,8 @@ export const buttonStyle = {
         text: {
             color: color.text,
             fontSize: 16,
-            textAlign: "center"
+            textAlign: "center",
+            fontFamily: "PoppinsLight"
         } as StyleProp<TextStyle>
     },
 
@@ -31,7 +32,8 @@ export const buttonStyle = {
         text: {
             color: color.text,
             fontSize: 16,
-            textAlign: "center"
+            textAlign: "center",
+            fontFamily: "PoppinsLight"
         } as StyleProp<TextStyle>
     }
 

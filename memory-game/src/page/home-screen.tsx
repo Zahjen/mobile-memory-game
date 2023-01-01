@@ -41,7 +41,7 @@ const HomeScreen = (): JSX.Element => {
                                 cardNumber: cardNumber.getValue.getId
                             })
                         } catch (e: any) {
-                            console.log(e.message);
+                            alert("Ce champ est requis pour la génération de la grille.");
                         }
                     }}
                     style = { buttonStyle.fill.container }

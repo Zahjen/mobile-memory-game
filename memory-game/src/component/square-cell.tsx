@@ -3,26 +3,21 @@ import { Cell } from "../modele/cell";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import { animatedCellStyle, squareCellStyle } from "../style/square-cell";
 import React from "react";
-import { CellController } from "../controller/cell-controller";
 
-interface SquareCellProps {
-    cell: Cell
+export interface SquareCellProps {
+    cell: Cell,
+    onPress: (flipAnimation: Animated.Value) => void
 }
 
 const SquareCell: React.FC<SquareCellProps> = (props: SquareCellProps) => {
 
     const flipAnimation = React.useRef(new Animated.Value(0)).current;
-    let flipRotation = 0;
 
     return (
         <Pressable
             style = { squareCellStyle.container }
-            onPress = {() => flipRotation = CellController
-                .getInstance()
-                .onCellClicked(
-                    flipRotation, 
-                    flipAnimation
-                )}>
+            disabled = { !props.cell.getIsClickable }
+            onPress = {() => props.onPress(flipAnimation)}>
             <Animated.View style = { animatedCellStyle(flipAnimation) }>
                 <Fontisto
                     name = { props.cell.getIcon }
