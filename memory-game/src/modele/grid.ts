@@ -1,8 +1,8 @@
-import { UndefinedException } from "../element/Input/global/exception/required-attribute/undefined-exception";
-import { NumberException } from "../element/Input/global/exception/validator/number-exception";
 import { IGridOption } from "../interface/grid";
 import { Cell } from "./cell";
 import { cardData } from "../variable/card-data";
+import { UndefinedException } from "../exception/required-attribute/undefined-exception";
+import { NumberException } from "../exception/validator/number-exception";
 
 export class Grid {
 

@@ -1,10 +1,7 @@
 import React from "react";
-import { View, Text } from "react-native";
-import InputDropdown from "../element/Input/input-dropdown/input-dropdown";
-import { InputDropdownComponent } from "../element/Input/input-dropdown/input-dropdown-component";
-import { dropdownComponent, errorComponent } from "../style/input";
-
-const ERROR = "Oups... Un problème est survenu lors de la génération du Composant! Vérifiez l'input entré!";
+import InputDropdown from "../element/Input/input-set/input-dropdown/input-dropdown";
+import { InputDropdownComponent } from "../element/Input/input-set/input-dropdown/input-dropdown-component";
+import { dropdownComponent } from "../style/input";
 
 export class InputGenerator {
 
@@ -43,19 +40,6 @@ export class InputGenerator {
     // ----------------
 
     /**
-     * Méthode permettant d'afficher un message indiquant si un problème est survenu.
-     * 
-     * @returns Message d'erreur
-     */
-    public renderErrorComponent(error: string = ERROR): JSX.Element {
-        return <View style = { errorComponent.container }>
-            <Text style = { errorComponent.text }>
-                { error }
-            </Text>
-        </View>
-    }
-
-    /**
      * Méthode permettant d'afficher un input de type dropdown.
      * 
      * @param input Instance de classe InputDropdownComponent.
@@ -66,7 +50,7 @@ export class InputGenerator {
             input = { input } 
             labelStyle = { dropdownComponent.labelStyle }
             itemTextStyle = { dropdownComponent.itemTextStyle }
-            listHeaderComponentStyleBackgroundColor = { dropdownComponent.listHeaderComponentStyleBackgroundColor }
+            listHeaderComponentStyle = { dropdownComponent.listHeaderComponentStyle }
             inputDropdownCurrentSelectionTextStyle = { dropdownComponent.inputDropdownCurrentSelectionTextStyle }
             errorStyle = { dropdownComponent.errorStyle }
             modalContainer = { dropdownComponent.modalContainer }

@@ -1,6 +1,7 @@
-import { EInputType } from "../element/Input/global/enumeration/input-type";
-import { Answer } from "../element/Input/global/input/answer";
-import { InputDropdownComponent } from "../element/Input/input-dropdown/input-dropdown-component";
+import { EInputType } from "../element/Input/enumeration/input-type";
+import { Answer } from "../element/Input/input-set/answer/answer";
+import { InputDropdownComponent } from "../element/Input/input-set/input-dropdown/input-dropdown-component";
+
 
 /**
  * Cette classe nous permet d'accéder aux diverses données pour les inputs de cette application.

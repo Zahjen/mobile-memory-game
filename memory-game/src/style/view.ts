@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, StyleSheet, ViewStyle } from "react-native";
 import { padding } from "../variable/padding";
 
 /**
@@ -6,8 +6,8 @@ import { padding } from "../variable/padding";
  * 
  * @returns Vue globale d'une page
  */
-export const pageView = (): StyleProp<ViewStyle> => {
-    return {
+export const pageView = StyleSheet.create({
+    container: {
         flex: 1,
         justifyContent: "center",
         alignItems: "flex-start",
@@ -15,4 +15,4 @@ export const pageView = (): StyleProp<ViewStyle> => {
         paddingHorizontal: padding.view.horizontal,
         width: '100%'
     }
-}
+})

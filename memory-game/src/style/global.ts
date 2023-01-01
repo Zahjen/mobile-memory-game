@@ -44,7 +44,11 @@ export const widthHeight = (width?: string | number, height?: string | number): 
  * @param textAlign L'alignement du texte
  * @returns Style correspondant à un texte
  */
-export const text = (colorText: string = color.text, textAlign: "center" | "auto" | "left" | "right" | "justify" = "justify", fontSizeTitle: number = fontSize.text): StyleProp<TextStyle> => {
+export const text = (
+    colorText: string = color.text, 
+    textAlign: "center" | "auto" | "left" | "right" | "justify" = "justify", 
+    fontSizeTitle: number = fontSize.text
+): StyleProp<TextStyle> => {
     return {
         color: colorText,
         fontSize: fontSizeTitle,
@@ -61,7 +65,11 @@ export const text = (colorText: string = color.text, textAlign: "center" | "auto
  * @param textAlign L'alignement d'un titre
  * @returns Style correspondant à un titre
  */
-export const title = (colorTitle: string = color.text, fontSizeTitle: number = fontSize.title, textAlign?: "center" | "auto" | "left" | "right" | "justify"): StyleProp<TextStyle> => {
+export const title = (
+    colorTitle: string = color.text, 
+    fontSizeTitle: number = fontSize.title, 
+    textAlign?: "center" | "auto" | "left" | "right" | "justify"
+): StyleProp<TextStyle> => {
     return {
         color: colorTitle,
         textAlign: textAlign,

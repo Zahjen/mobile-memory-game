@@ -1,10 +1,10 @@
-import { StyleProp, TextStyle } from "react-native";
+import { StyleProp, TextStyle, StyleSheet } from "react-native";
 import { borderRadius } from "../variable/border-radius";
 import { color } from "../variable/color";
 
 export const buttonStyle = {
 
-    fill: {
+    fill: StyleSheet.create({
         container: {
             backgroundColor: color.secondary,
             borderRadius: borderRadius.button,
@@ -17,10 +17,10 @@ export const buttonStyle = {
             fontSize: 16,
             textAlign: "center",
             fontFamily: "PoppinsLight"
-        } as StyleProp<TextStyle>
-    },
+        }
+    }),
 
-    empty: {
+    empty: StyleSheet.create({
         container: {
             borderColor: color.secondary,
             borderWidth: 1,
@@ -34,7 +34,7 @@ export const buttonStyle = {
             fontSize: 16,
             textAlign: "center",
             fontFamily: "PoppinsLight"
-        } as StyleProp<TextStyle>
-    }
+        }
+    })
 
 }

@@ -1,20 +1,5 @@
-import { StyleProp, StyleSheet, TextStyle } from "react-native";
+import { StyleSheet } from "react-native";
 import { color } from "../variable/color";
-
-/**
- * Style relatif à un composant permettant l'affichage d'une erreur.
- */
- export const errorComponent = {
-    container: { 
-        backgroundColor: color.error,
-        padding: 10,
-        borderRadius: 7
-    },
-
-    text: {
-        color: color.text,        
-    }
-}
 
 /**
  * Style relatif au composant permettant l'affichage d'un dropdown.
@@ -30,7 +15,7 @@ import { color } from "../variable/color";
     itemTextStyle: {
         color: color.text
     },
-    listHeaderComponentStyleBackgroundColor: {
+    listHeaderComponentStyle: {
         backgroundColor: color.backgroundColor
     },
     inputDropdownCurrentSelectionTextStyle: {

@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
 import { View, SafeAreaView, Text, Pressable } from "react-native";
-import { InputDropdownComponent } from "../element/Input/input-dropdown/input-dropdown-component";
+import { InputDropdownComponent } from "../element/Input/input-set/input-dropdown/input-dropdown-component";
 import Spacer from "../element/spacer";
 import Title from "../element/title";
 import { RouteParams } from "../navigation/route-navigator";
@@ -26,7 +26,7 @@ const HomeScreen = (): JSX.Element => {
 
     return (
         <SafeAreaView style = {{ backgroundColor: color.backgroundColor, flex: 1 }}>
-            <View style = { pageView() }>
+            <View style = { pageView.container }>
                 <Title 
                     title = 'MEMORY GAME'
                     titleStyle = { homeScreenStyle.title }

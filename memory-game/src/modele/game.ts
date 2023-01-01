@@ -1,4 +1,4 @@
-import { UndefinedException } from "../element/Input/global/exception/required-attribute/undefined-exception";
+import { UndefinedException } from "../exception/required-attribute/undefined-exception";
 import { IGameOption } from "../interface/game";
 import { Grid } from "./grid";
 

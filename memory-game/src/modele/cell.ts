@@ -1,5 +1,5 @@
-import { UndefinedException } from "../element/Input/global/exception/required-attribute/undefined-exception";
-import { NumberException } from "../element/Input/global/exception/validator/number-exception";
+import { UndefinedException } from "../exception/required-attribute/undefined-exception";
+import { NumberException } from "../exception/validator/number-exception";
 import { ICellOption } from "../interface/cell";
 
 export class Cell {
